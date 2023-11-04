@@ -8,6 +8,9 @@ export default function RootLayout({
     <html lang="en">
       <body className='{`${Inter.className} antialiased`}'>
         {children}
+        <footer>
+          Hecho con amor por Rene Kuhm
+        </footer>
       </body>
     </html>
   );
