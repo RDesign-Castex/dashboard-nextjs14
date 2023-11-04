@@ -1,5 +1,6 @@
 import AcmeLogo from '@/app/ui/acme-logo';
 import styles from './ui/home.module.css'
+import Image from 'next/image';
 
 import Link from 'next/link';
 export default function Page() {
@@ -25,10 +26,21 @@ export default function Page() {
             <span>Log in</span>
           </Link>
         </div>
+      </div>  
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
-          {/* Add Hero Images Here */}
+          <Image src="/hero-desktop.png" alt="Screeshot dasboard"
+            width={1000}
+            height={760}
+            className='hidden md:block'
+          />
+          <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
+            <Image src="/hero-mobile.png" alt="Screeshot dasboard"
+              width={560}
+              height={620}
+              className='block md:hidden'
+            />
+          </div>
         </div>
-      </div>
     </main>
   );
 }
