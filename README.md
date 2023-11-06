@@ -1,5 +1,9 @@
-## Next.js App Router Course - Starter
+# Dashboard creado con next-js 14
 
-This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
+Se corrigieron errores se conecto con base sql de vercel a modo de prueba 
+falta trabajar en login signUP y signOut ademas terminar invoices..
 
-For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
+
+
+
+
