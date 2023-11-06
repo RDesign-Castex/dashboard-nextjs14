@@ -1,10 +1,11 @@
+
 import {
   BanknotesIcon,
   ClockIcon,
   UserGroupIcon,
   InboxIcon,
 } from '@heroicons/react/24/outline';
-import { lusitana } from '@/app/ui/fonts';
+import { Inter } from '@/app/ui/fonts';
 
 const iconMap = {
   collected: BanknotesIcon,
@@ -13,34 +14,34 @@ const iconMap = {
   invoices: InboxIcon,
 };
 
-export default async function CardWrapper() {
-  return (
-    <>
-      {/* NOTE: comment in this code when you get to this point in the course */}
-
-      {/* <Card title="Collected" value={totalPaidInvoices} type="collected" />
-      <Card title="Pending" value={totalPendingInvoices} type="pending" />
-      <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
-      <Card
-        title="Total Customers"
-        value={numberOfCustomers}
-        type="customers"
-      /> */}
-    </>
-  );
+interface CardProps {
+  title: string;
+  value: number;
+  type: 'collected' | 'pending' | 'invoices' | 'customers';
+  totalPaidInvoices: number;
+  totalPendingInvoices: number;
+  numberOfInvoices: number;
+  numberOfCustomers: number;
 }
 
-export function Card({
-  title,
-  value,
-  type,
-}: {
-  title: string;
-  value: number | string;
-  type: 'invoices' | 'customers' | 'pending' | 'collected';
-}) {
-  const Icon = iconMap[type];
+interface CardWrapperProps {
+  totalPaidInvoices: number;
+  totalPendingInvoices: number;
+  numberOfInvoices: number;
+  numberOfCustomers: number;
+}
 
+
+
+interface CardWrapperProps {
+  title: string;
+  value: number;
+  type: string;
+  // include any other props that Card might accept
+}
+
+export function Card({ title, value, type, }: CardProps) {
+  const Icon = iconMap[type];
   return (
     <div className="rounded-xl bg-gray-50 p-2 shadow-sm">
       <div className="flex p-4">
@@ -48,7 +49,7 @@ export function Card({
         <h3 className="ml-2 text-sm font-medium">{title}</h3>
       </div>
       <p
-        className={`${lusitana.className}
+        className={`${Inter.className}
           truncate rounded-xl bg-white px-4 py-8 text-center text-2xl`}
       >
         {value}
@@ -56,3 +57,4 @@ export function Card({
     </div>
   );
 }
+
